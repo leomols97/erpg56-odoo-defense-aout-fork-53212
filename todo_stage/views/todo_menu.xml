@@ -1,0 +1,18 @@
+<odoo>
+<!--    &lt;!&ndash;    Action for Todo task tag menu &ndash;&gt;-->
+<!--    <act_window view_mode="tree,form" res_model="todo.task.tag" name="Menu des tags" id="action-todo-task-tag"/>-->
+<!--    &lt;!&ndash;    menu item only for text &ndash;&gt;-->
+<!--    <menuitem name="Vers les tags" id="todo-tag-menu-main"/>-->
+<!--    <menuitem name="Les tags" id="todo-tag-menu-child" parent="todo-tag-menu-main"/>-->
+<!--    <menuitem name="Les nouveaux tags" id="tag_menu" parent="todo-tag-menu-child" action="action-todo-task-tag"/>-->
+
+<!--    <menuitem name="Tags" id="tag-menu" parent="contact-menu-child" action="contact_list_action"/>-->
+
+
+
+    <act_window context="{'default_name': 'Auto-Tag-'}" view_mode="tree,form" res_model="todo.task.tag" name="To-do Tag"
+                id="action_todo_tag"/>
+
+    <!-- Third level menu items -->
+    <menuitem name="Tags" id="menu_todo_task_tag" action="action_todo_tag" parent="todo_app.contact-menu-child"/>
+</odoo>

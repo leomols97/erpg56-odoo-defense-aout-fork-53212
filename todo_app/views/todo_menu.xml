@@ -1,0 +1,22 @@
+<odoo>
+<!--    Action for Todo task menu -->
+    <act_window view_mode="tree,form" res_model="todo.task" name="Menu des tâches" id="action-todo-task" />
+<!--    menu item only for text -->
+    <!--    Name of the label in the hamburger at the first connexion            -->
+    <menuitem name="Vers Todo" id="todo-menu-main"/>
+    <!--    Name of the hamburger in the webpage            -->
+    <menuitem name="Les tâches" id="todo-menu-child" parent="todo-menu-main"/>
+    <!--    Name of the sub hamburger in the webpage            -->
+    <menuitem name="Les nouvelles tâches" id="task_menu" parent="todo-menu-child" action="action-todo-task"/>
+
+<!--    record to display all the res partener-->
+    <record id="contact_list_action" model="ir.actions.act_window">
+        <field name="name">Contact</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    to display the contact of rest partener upside-->
+    <menuitem name="Configuration" id="contact-menu-child" parent="todo-menu-main"/>
+    <menuitem name="Contact" id="contact-menu" parent="contact-menu-child" action="contact_list_action"/>
+</odoo>
