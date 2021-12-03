@@ -1,0 +1,13 @@
+<odoo>
+<!--    Action for Livre Menu -->
+    <act_window view_mode="tree,form" res_model="esi.lecture.livre" name="Menu des livres" id="action-livre" />
+<!--    menu item only for text -->
+    <!--    Name of the label in the hamburger at the first connexion            -->
+    <menuitem name="Vers Livres" id="livre-menu-main"/>
+    <!--    Name of the hamburger in the webpage            -->
+    <menuitem name="Les livres" id="livre-menu-child" parent="livre-menu-main"/>
+
+    <!--    Name of the sub hamburger in the webpage            -->
+    <menuitem name="Les livres créer" id="livre_menu" parent="livre-menu-child" action="action-livre"/>
+
+</odoo>

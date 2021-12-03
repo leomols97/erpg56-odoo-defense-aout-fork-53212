@@ -1,0 +1,57 @@
+<odoo>
+    <record model="ir.ui.view" id="livre_form_view">
+        <field name="name">Livre form</field>
+        <field name="model">esi.lecture.livre</field>
+        <field name="arch" type="xml">
+            <form string="Livre form">
+                <sheet>
+                    <group>
+                        <group name="group-center-left">
+                            <field name="name"/>
+                            <field name="auteur_id" widget="many2many_tags"/>
+                            <field name="numberOfPage"/>
+
+                        </group>
+                        <group name="group-center-right">
+                            <group>
+                                <field name="datePublication"/>
+                            </group>
+                            <group name="group-top-right">
+                                <field name="image" widget="image" class="oe_avatar"/>
+                            </group>
+
+                        </group>
+                    </group>
+                    <group>
+                        <group name="group-bottom-left">
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="livre_tree_view">
+        <field name="name">Listes des livres</field>
+        <field name="model">esi.lecture.livre</field>
+        <field name="arch" type="xml">
+            <tree string="Livre tree">
+                <field name="name"/>
+                <field name="datePublication"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="livre_search_view">
+        <field name="name">Filtre recherche</field>
+        <field name="model">esi.lecture.livre</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="auteur_id"/>
+                <filter name="filter_without_autor" string="Pas d'auteurs" domain="[('auteur_id', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
