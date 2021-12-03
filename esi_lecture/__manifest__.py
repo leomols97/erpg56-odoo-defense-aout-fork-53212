@@ -29,6 +29,7 @@
         'views/templates.xml',
         'views/livre_menu.xml',
         'views/livre_view.xml',
+        'views/res_partner_view.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode

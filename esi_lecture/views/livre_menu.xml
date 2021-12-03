@@ -10,4 +10,15 @@
     <!--    Name of the sub hamburger in the webpage            -->
     <menuitem name="Les livres créer" id="livre_menu" parent="livre-menu-child" action="action-livre"/>
 
+
+    <!--    record to display all the res partener-->
+    <record id="auteur_list_action" model="ir.actions.act_window">
+        <field name="name">Partenaires - Auteurs</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+<!--    to display the contact of rest partener upside-->
+    <menuitem name="Configuration auteur" id="auteur-menu-child" parent="livre-menu-main"/>
+    <menuitem name="Les auteurs" id="auteur-menu" parent="auteur-menu-child" action="auteur_list_action"/>
 </odoo>

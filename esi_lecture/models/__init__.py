@@ -2,3 +2,4 @@
 
 from . import models
 from . import livre
+from . import res_partner_model
