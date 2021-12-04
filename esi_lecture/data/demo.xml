@@ -75,17 +75,6 @@
             <field name="image" type="base64" file="esi_lecture/static/img/harryPotter3.jpg"/>
         </record>
 
-
-        "Dune - Tome 1","
-        <h2>Biographie de l'auteur</h2>
-        <br>
-        Véritable légende dans l'univers de la SF, l'écrivain américain Frank Herbert (1920 - 1986)
-        est mondialement connu pour sa série Dune,
-        vendue à des millions d'exemplaires.
-        En France, ses œuvres majeures ont été publiées dans la collection "" Ailleurs &amp; Demain "".
-
-        ","2020-10-01","838","Frank Herbert"
-
         <record model="esi.lecture.livre" id="livre_04">
             <field name="name">Dune - Tome 1</field>
             <field name="description"><![CDATA[

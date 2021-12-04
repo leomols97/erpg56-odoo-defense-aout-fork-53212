@@ -1,27 +1,45 @@
 <odoo>
+
+    <!--    Form List for Book  -->
     <record model="ir.ui.view" id="livre_form_view">
         <field name="name">Livre form</field>
         <field name="model">esi.lecture.livre</field>
         <field name="arch" type="xml">
             <form string="Livre form">
                 <sheet>
+                    <div class="oe_read_only">
+                        <div name="button_box" class="oe_button_box">
+                            <button name="like_unlike_a_book"
+                                    context="{'default_user_id': uid}"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-thumbs-up"
+                                    help="Like the book">
+                                <field string="likes" name="number_like_book" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="top text-right">
+                            <field name="like_statut"></field>
+                        </div>
+                    </div>
+
                     <group>
-                        <group name="group-center-left">
+                        <group name="group_center_left">
                             <field name="name"/>
                             <field name="auteur_id" widget="many2many_tags"/>
                             <field name="numberOfPage"/>
                         </group>
-                        <group name="group-center-right">
+                        <group name="group_center_right">
                             <group>
                                 <field name="datePublication"/>
                             </group>
-                            <group name="group-top-right">
+                            <group name="group_top_right">
                                 <field name="image" widget="image" class="oe_avatar"/>
                             </group>
                         </group>
                     </group>
                     <group>
-                        <group name="group-bottom-left">
+                        <group name="group_bottom_left">
                             <field name="description"/>
                         </group>
                     </group>
@@ -29,6 +47,8 @@
             </form>
         </field>
     </record>
+
+    <!--    View List for book    -->
 
     <record model="ir.ui.view" id="livre_tree_view">
         <field name="name">Listes des livres</field>
@@ -41,6 +61,8 @@
         </field>
     </record>
 
+
+    <!--  Filter search for book  -->
     <record model="ir.ui.view" id="livre_search_view">
         <field name="name">Filtre recherche</field>
         <field name="model">esi.lecture.livre</field>

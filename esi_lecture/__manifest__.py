@@ -31,8 +31,7 @@
         'views/livre_view.xml',
         'views/res_partner_view.xml',
         'security/ir.model.access.csv',
-        'data/res.partner.csv',
-        'data/esi.lecture.livre.csv',
+        'data/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
