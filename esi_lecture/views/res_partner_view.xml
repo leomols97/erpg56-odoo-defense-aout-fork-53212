@@ -6,6 +6,7 @@
         <field name="name">Livre des auteurs Formulaire</field>
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='sales_purchases']" position="before">
             <form>
                 <sheet>
                     <!--    Display all the information for read and edit of res.partner        -->
@@ -24,6 +25,7 @@
                     </group>
                 </sheet>
             </form>
+            </xpath>
         </field>
     </record>
 
