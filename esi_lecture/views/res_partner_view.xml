@@ -1,6 +1,6 @@
 <odoo>
 
-    <!-- Form view-->
+    <!-- Form view RES PARTNER-->
     <record id="base.view_partner_form" model="ir.ui.view">
         <field name="priority">15</field>
         <field name="name">Livre des auteurs Formulaire</field>
@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <!--    Display all the information for read and edit of res.partner        -->
                     <group name="group_top">
                         <group name="group_left">
                             <field name="name"></field>
@@ -26,6 +27,7 @@
         </field>
     </record>
 
+    
     <!--  Graph view   -->
     <record id="auteur_graph_view" model="ir.ui.view">
         <field name="name"></field>

@@ -6,6 +6,7 @@
             <field name="name">J.K. Rowling</field>
             <field name="is_author">True</field>
         </record>
+
         <record model="res.partner" id="respartner_author_02">
             <field name="name">Frank Herbert</field>
             <field name="is_author">True</field>

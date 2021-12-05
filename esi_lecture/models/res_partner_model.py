@@ -4,6 +4,7 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+### Overide res.partner pour pouvoir avoir des auteurs
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
