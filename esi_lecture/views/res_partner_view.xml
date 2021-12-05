@@ -1,12 +1,12 @@
 <odoo>
 
     <!-- Form view RES PARTNER-->
-    <record id="base.view_partner_form" model="ir.ui.view">
+    <record id="my_inherited_view" model="ir.ui.view">
         <field name="priority">15</field>
         <field name="name">Livre des auteurs Formulaire</field>
         <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='sales_purchases']" position="before">
             <form>
                 <sheet>
                     <!--    Display all the information for read and edit of res.partner        -->
@@ -25,7 +25,6 @@
                     </group>
                 </sheet>
             </form>
-            </xpath>
         </field>
     </record>
 
