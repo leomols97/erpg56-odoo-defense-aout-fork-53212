@@ -1,34 +1,39 @@
 <odoo>
 
     <!-- Form view RES PARTNER-->
-    <record id="my_inherited_view" model="ir.ui.view">
+    <record id="inherited_author_view" model="ir.ui.view">
         <field name="priority">15</field>
         <field name="name">Livre des auteurs Formulaire</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <!--    Display all the information for read and edit of res.partner        -->
-                    <group name="group_top">
-                        <group name="group_left">
-                            <field name="name"></field>
-                            <field name="phone"></field>
-                            <field name="email"></field>
-                            <field name="is_author"></field>
-                        </group>
-                        <group name="group_right">
-                            <field name="city"></field>
-                            <field name="country_id"></field>
-                            <field name="company_id"></field>
-                        </group>
-                    </group>
-                </sheet>
-            </form>
+            <sheet>
+                <group>
+                    <field name="is_author"></field>
+                </group>
+            </sheet>
+<!--            <form>-->
+<!--                <sheet>-->
+<!--                    &lt;!&ndash;    Display all the information for read and edit of res.partner        &ndash;&gt;-->
+<!--                    <group name="group_top">-->
+<!--                        <group name="group_left">-->
+<!--                            <field name="name"></field>-->
+<!--                            <field name="phone"></field>-->
+<!--                            <field name="email"></field>-->
+
+<!--                        </group>-->
+<!--                        <group name="group_right">-->
+<!--                            <field name="city"></field>-->
+<!--                            <field name="country_id"></field>-->
+<!--                            <field name="company_id"></field>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
         </field>
     </record>
 
-    
+
     <!--  Graph view   -->
     <record id="auteur_graph_view" model="ir.ui.view">
         <field name="name"></field>

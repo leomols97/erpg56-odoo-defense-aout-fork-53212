@@ -16,6 +16,11 @@
             <field name="is_author">True</field>
         </record>
 
+        <!--        Resseller Product for Point Sale     -->
+        <record model="res.partner" id="respartner_resseller_01">
+            <field name="name">Presses Universitaires de Bruxelles</field>
+        </record>
+
         <!--        ESI LECTURE LIVRE     -->
         <record model="esi.lecture.livre" id="livre_01">
             <field name="name">Harry Potter, I : Harry Potter à l'école des sorciers</field>

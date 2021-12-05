@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Form view RES PARTNER-->
+    <record id="inherited_product_view" model="ir.ui.view">
+        <field name="priority">15</field>
+        <field name="name">Produit Livre Formulaire</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="Librairie" name="library">
+                    <sheet>
+                        <group>
+                            <field name="list_book_product" widget="many2many_tags"></field>
+                        </group>
+                    </sheet>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <!--    Filter view    -->
+    <record model="ir.ui.view" id="product_search_view">
+        <field name="name">Filtre recherche Produit</field>
+        <field name="model">product.template</field>
+        <field name="priority">15</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="filter_product_without_book" string="Produit avec livre" domain="[('list_book_count', '>=', 1)]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

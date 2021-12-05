@@ -30,6 +30,7 @@
         'views/livre_menu.xml',
         'views/livre_view.xml',
         'views/res_partner_view.xml',
+        'views/product_template_view.xml',
         'security/ir.model.access.csv',
         'data/demo.xml',
     ],
