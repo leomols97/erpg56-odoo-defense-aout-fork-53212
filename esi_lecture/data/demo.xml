@@ -97,5 +97,57 @@
             <field name="auteur_id" eval="[(4, ref('respartner_author_02'), None)]"></field>
             <field name="image" type="base64" file="esi_lecture/static/img/dune1.jpg"/>
         </record>
+
+        <!-- Import the the different product contained in the .csv file -->
+        <record model="product.template" id="product_book_01">
+            <field name="name">Coffret Potter</field>
+            <field name="standard_price">40</field>
+            <field name="list_price">50</field>
+            <field name="type">product</field>
+            <field name="weight">0.7</field>
+            <field name="default_code">Box1</field>
+            <field name="available_in_pos">True</field>
+            <field name="qty_available">10</field>
+        </record>
+        <record model="product.template" id="product_book_01">
+            <field name="name">Book 1</field>
+            <field name="standard_price">8.9</field>
+            <field name="list_price">14.9</field>
+            <field name="type">product</field>
+            <field name="weight">0.18</field>
+            <field name="default_code">2070584623</field>
+            <field name="available_in_pos">True</field>
+            <field name="qty_available">42</field>
+        </record>
+        <record model="product.template" id="product_book_01">
+            <field name="name">Book 2</field>
+            <field name="standard_price">9.9</field>
+            <field name="list_price">14.9</field>
+            <field name="type">product</field>
+            <field name="weight">0.23</field>
+            <field name="default_code">207058464X</field>
+            <field name="available_in_pos">True</field>
+            <field name="qty_available">100</field>
+        </record>
+        <record model="product.template" id="product_book_01">
+            <field name="name">Book 3</field>
+            <field name="standard_price">9.9</field>
+            <field name="list_price">14.9</field>
+            <field name="type">product</field>
+            <field name="weight">0.23</field>
+            <field name="default_code">2070584925</field>
+            <field name="available_in_pos">True</field>
+            <field name="qty_available">130</field>
+        </record>
+        <record model="product.template" id="product_book_01">
+            <field name="name">Book 4</field>
+            <field name="standard_price">19.990000000000002</field>
+            <field name="list_price">24.99</field>
+            <field name="type">product</field>
+            <field name="weight">0.86</field>
+            <field name="default_code">2221249488</field>
+            <field name="available_in_pos">True</field>
+            <field name="qty_available">500</field>
+        </record>
     </data>
 </odoo>
