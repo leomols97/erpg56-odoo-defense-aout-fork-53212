@@ -108,9 +108,14 @@
             <field name="default_code">Box1</field>
             <field name="available_in_pos">True</field>
             <field name="qty_available">10</field>
+<<<<<<< HEAD
             <field name="list_book_product" eval="[(4, ref('livre_01'), None),(4, ref('livre_02'), None), (4, ref('livre_03'), None)]"></field>
         </record>
         <record model="product.template" id="product_book_02">
+=======
+        </record>
+        <record model="product.template" id="product_book_01">
+>>>>>>> 3ca0b006379d2285f89405552d6503990565d7ae
             <field name="name">Book 1</field>
             <field name="standard_price">8.9</field>
             <field name="list_price">14.9</field>
@@ -119,9 +124,14 @@
             <field name="default_code">2070584623</field>
             <field name="available_in_pos">True</field>
             <field name="qty_available">42</field>
+<<<<<<< HEAD
             <field name="list_book_product" eval="[(4, ref('livre_01'), None)]"></field>
         </record>
         <record model="product.template" id="product_book_03">
+=======
+        </record>
+        <record model="product.template" id="product_book_01">
+>>>>>>> 3ca0b006379d2285f89405552d6503990565d7ae
             <field name="name">Book 2</field>
             <field name="standard_price">9.9</field>
             <field name="list_price">14.9</field>
@@ -130,9 +140,14 @@
             <field name="default_code">207058464X</field>
             <field name="available_in_pos">True</field>
             <field name="qty_available">100</field>
+<<<<<<< HEAD
             <field name="list_book_product" eval="[(4, ref('livre_02'), None)]"></field>
         </record>
         <record model="product.template" id="product_book_03">
+=======
+        </record>
+        <record model="product.template" id="product_book_01">
+>>>>>>> 3ca0b006379d2285f89405552d6503990565d7ae
             <field name="name">Book 3</field>
             <field name="standard_price">9.9</field>
             <field name="list_price">14.9</field>
@@ -141,9 +156,14 @@
             <field name="default_code">2070584925</field>
             <field name="available_in_pos">True</field>
             <field name="qty_available">130</field>
+<<<<<<< HEAD
             <field name="list_book_product" eval="[(4, ref('livre_03'), None)]"></field>
         </record>
         <record model="product.template" id="product_book_04">
+=======
+        </record>
+        <record model="product.template" id="product_book_01">
+>>>>>>> 3ca0b006379d2285f89405552d6503990565d7ae
             <field name="name">Book 4</field>
             <field name="standard_price">19.990000000000002</field>
             <field name="list_price">24.99</field>
@@ -152,7 +172,10 @@
             <field name="default_code">2221249488</field>
             <field name="available_in_pos">True</field>
             <field name="qty_available">500</field>
+<<<<<<< HEAD
             <field name="list_book_product" eval="[(4, ref('livre_04'), None)]"></field>
+=======
+>>>>>>> 3ca0b006379d2285f89405552d6503990565d7ae
         </record>
     </data>
 </odoo>
