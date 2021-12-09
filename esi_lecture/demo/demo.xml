@@ -99,7 +99,7 @@
         </record>
 
         <!-- Import the the different product contained in the .csv file -->
-        <record model="product.template" id="product_book_01">
+        <record model="product.product" id="product_book_01">
             <field name="name">Coffret Potter</field>
             <field name="standard_price">40</field>
             <field name="list_price">50</field>
@@ -108,9 +108,10 @@
             <field name="default_code">Box1</field>
             <field name="available_in_pos">True</field>
             <field name="qty_available">10</field>
-            <field name="list_book_product" eval="[(4, ref('livre_01'), None),(4, ref('livre_02'), None), (4, ref('livre_03'), None)]"></field>
+            <field name="list_book_product"
+                   eval="[(4, ref('livre_01'), None),(4, ref('livre_02'), None), (4, ref('livre_03'), None)]"></field>
         </record>
-        <record model="product.template" id="product_book_02">
+        <record model="product.product" id="product_book_02">
             <field name="name">Book 1</field>
             <field name="standard_price">8.9</field>
             <field name="list_price">14.9</field>
@@ -121,7 +122,7 @@
             <field name="qty_available">42</field>
             <field name="list_book_product" eval="[(4, ref('livre_01'), None)]"></field>
         </record>
-        <record model="product.template" id="product_book_03">
+        <record model="product.product" id="product_book_03">
             <field name="name">Book 2</field>
             <field name="standard_price">9.9</field>
             <field name="list_price">14.9</field>
@@ -132,7 +133,7 @@
             <field name="qty_available">100</field>
             <field name="list_book_product" eval="[(4, ref('livre_02'), None)]"></field>
         </record>
-        <record model="product.template" id="product_book_03">
+        <record model="product.product" id="product_book_04">
             <field name="name">Book 3</field>
             <field name="standard_price">9.9</field>
             <field name="list_price">14.9</field>
@@ -143,7 +144,7 @@
             <field name="qty_available">130</field>
             <field name="list_book_product" eval="[(4, ref('livre_03'), None)]"></field>
         </record>
-        <record model="product.template" id="product_book_04">
+        <record model="product.product" id="product_book_05">
             <field name="name">Book 4</field>
             <field name="standard_price">19.990000000000002</field>
             <field name="list_price">24.99</field>
@@ -154,5 +155,63 @@
             <field name="qty_available">500</field>
             <field name="list_book_product" eval="[(4, ref('livre_04'), None)]"></field>
         </record>
+
+
+        <!--    Inventory Line   -->
+        <record id="stock_inventory_book_box_0" model="stock.inventory">
+            <field name="name">Starting Inventory Book/Box</field>
+        </record>
+
+        <record id="stock_inventory_line_book_01" model="stock.inventory.line">
+            <field name="product_id"  ref="product_book_01"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_book_box_0"/>
+            <field name="product_qty">10</field>
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+
+        <record id="stock_inventory_line_book_02" model="stock.inventory.line">
+            <field name="product_id"  ref="product_book_02"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_book_box_0"/>
+            <field name="product_qty">42</field>
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+
+        <record id="stock_inventory_line_book_03" model="stock.inventory.line">
+            <field name="product_id"  ref="product_book_03"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_book_box_0"/>
+            <field name="product_qty">100</field>
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+
+        <record id="stock_inventory_line_book_04" model="stock.inventory.line">
+            <field name="product_id"  ref="product_book_04"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_book_box_0"/>
+            <field name="product_qty">130</field>
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+
+        <record id="stock_inventory_line_book_05" model="stock.inventory.line">
+            <field name="product_id"  ref="product_book_05"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_book_box_0"/>
+            <field name="product_qty">500</field>
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+
+
+
+        <function model="stock.inventory" name="_action_start">
+            <function eval="[[('state','=','draft'),('id', '=', ref('stock_inventory_book_box_0'))]]"
+                      model="stock.inventory" name="search"/>
+        </function>
+        <function model="stock.inventory" name="action_validate">
+            <function eval="[[('state','=','confirm'),('id', '=', ref('stock_inventory_book_box_0'))]]"
+                      model="stock.inventory" name="search"/>
+        </function>
+
     </data>
 </odoo>
