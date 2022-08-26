@@ -1,0 +1,22 @@
+<odoo>
+
+    <!-- Form view RES PARTNER-->
+    <record id="inherited_review_view" model="ir.ui.view">
+        <field name="priority">20</field>
+        <field name="name">Critique</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+                    <field name="book_id"/>
+                    <field name="subscriber_id"/>
+                    <field name="state"/>
+                    <field name="end_date"/>
+                    <field name="rating"/>
+                    <field name="description"/>
+                </group>
+            </sheet>
+        </field>
+    </record>
+</odoo>

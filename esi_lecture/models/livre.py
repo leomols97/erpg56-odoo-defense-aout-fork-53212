@@ -82,3 +82,21 @@ class Livre(models.Model):
     #############################
     #### Fin du Smart Button ####
     #############################
+
+
+    review_id = fields.Many2one('esi.lecture.livre.review.xml', 'book_id', string="Une critique")
+
+    total_reviews = fields.Integer(string="Nombre de critique total à propos du livre", compute="_get_all_reviews", store=True,
+                                default=0)
+
+    @api.depends('rent_id')
+    def _get_all_reviews(self):
+        for book in self:
+            total = 0
+            for review in book.review_id:
+                total += 1
+
+            self.total_rent = total
+
+    _logger.info('------------------------------------\nBook inherit %s\n------------------------------------',
+                 __name__)

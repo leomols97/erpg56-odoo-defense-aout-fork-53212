@@ -1,0 +1,71 @@
+<odoo>
+    <record model="ir.ui.view" id="livre_form_view">
+        <field name="priority">15</field>
+        <field name="name">Livre form</field>
+        <field name="model">esi.lecture.livre</field>
+        <field name="arch" type="xml">
+            <form string="Livre form">
+                <sheet>
+<!--                     Like system that will display only when read not edit-->
+                    <div class="oe_read_only">
+                        <div name="button_box" class="oe_button_box">
+                            <button name="like_unlike_a_book"
+                                    context="{'default_user_id': uid}"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-thumbs-up"
+                                    help="Like the book">
+                                <field string="likes" name="number_like_book" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="top text-right">
+                            <field name="like_statut"></field>
+                        </div>
+                    </div>
+
+
+                    <!--     Formulaire pour l'edit et la vue des données d'un livre      -->
+                    <group>
+                        <group name="group_center_left">
+                            <field name="name"/>
+                            <field name="auteur_id" widget="many2many_tags"/>
+                            <field name="numberOfPage"/>
+                        </group>
+                        <group name="group_center_right">
+                            <group>
+                                <field name="datePublication"/>
+                            </group>
+                            <group name="group_top_right">
+                                <field name="image" widget="image" class="oe_avatar"/>
+                            </group>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="total_rent"/>
+                    </group>
+                    <group>
+                        <group name="group_bottom_left">
+                            <field name="description"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <!--Number of reviews -->
+                        <div class="oe_read_only">
+                            <div name="button_box" class="oe_button_box">
+                                <button name="reviews_book"
+                                        context="{'default_user_id': uid}"
+                                        type="object"
+                                        class="oe_stat_button"
+                                        icon="fa-thumbs-up"
+                                        help="Nombre de critiques">
+                                    <field string="reviews" name="number_reviews_book" widget="statinfo"/>
+                                </button>
+                            </div>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -67,3 +67,11 @@ class TestBook(TransactionCase):
         _logger.info(
             '\n\n------------------------------------\nTest création classique avec un autheur %s\n------------------------------------\n\n',
             __name__)
+
+    def test_same_subscriber_two_reviews(self):
+            "Create a simple subscriber"
+            book = self.env['esi.lecture.subscriber']
+            
+            _logger.info(
+                '\n\n------------------------------------\nTest création classique avec un autheur %s\n------------------------------------\n\n',
+                __name__)

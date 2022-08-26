@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- To-Do Gift Form view -->
+    <record id="view_form_review_book" model="ir.ui.view">
+        <field name="name">Esi-Lecture Rent</field>
+        <field name="model">esi.lecture.livre.rent</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="book_id" widget="Many2one"/>
+                            <field name="subscriber_id" widget="Many2one"/>
+                            <field name="rating" widget="Many2one"/>
+                            <field name="description" widget="Many2one"/>
+                            <field name="state" widget="statusbar"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="rent_tree_view">
+        <field name="name">Esi-Lecture Community</field>
+        <field name="model">esi.lecture.livre.review</field>
+        <field name="arch" type="xml">
+            <tree string="Review tree">
+                <field name="name_book"/>
+                <field name="name_subscriber"/>
+                <field name="state"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>
